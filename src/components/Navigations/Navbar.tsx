@@ -3,6 +3,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import '../../index.css'
 import logo from '../../assets/logo.png'
@@ -13,7 +14,9 @@ const Navbar = () => {
     <header className='bg-[#23272F]'>
       <nav className='flex justify-between items-center container mx-auto h-[72px] z-50'>
         <div>
-          <img className='w-16' src={logo} alt='logo' />
+          <Link to={'/'}>
+            <img className='w-16' src={logo} alt='logo' />
+          </Link>
         </div>
         <div
           className={`md:static absolute bg-[#23272F] md:min-h-fit min-h-[24vh] left-0  ${
@@ -22,26 +25,29 @@ const Navbar = () => {
         >
           <ul className='flex md:flex-row flex-col md:items-center md:gap-[2vw] gap-12'>
             <li>
-              <a className='text-gray-400 hover:text-white transition-colors duration-500' href='#'>
+              <Link className='text-gray-400 hover:text-white transition-colors duration-500' to='#'>
                 Về chúng tôi
-              </a>
+              </Link>
             </li>
             <li>
-              <a className='text-gray-400 hover:text-white transition-colors duration-500' href='#'>
+              <Link className='text-gray-400 hover:text-white transition-colors duration-500' to='#'>
                 Công việc
-              </a>
+              </Link>
             </li>
             <li>
-              <a className='text-gray-400 hover:text-white transition-colors duration-500' href='#'>
+              <Link className='text-gray-400 hover:text-white transition-colors duration-500' to='#'>
                 Khóa học
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className='flex items-center gap-6'>
-          <a className='bg-[#3D4453] text-white px-5 py-2 rounded-full hover:bg-[#4ED9F8] hover:text-gray-800 transition-colors duration-500'>
+          <Link
+            to={'/contact'}
+            className='bg-[#3D4453] text-white px-5 py-2 rounded hover:bg-[#4ED9F8] hover:text-gray-800 transition-colors duration-500'
+          >
             Liên hệ
-          </a>
+          </Link>
           <i
             onClick={() => {
               setShowDropdown(!showDropdown)
