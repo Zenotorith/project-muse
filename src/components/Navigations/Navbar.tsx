@@ -11,11 +11,11 @@ const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false)
 
   return (
-    <header className='bg-[#23272F]'>
-      <nav className='flex justify-between items-center container mx-auto h-[72px] z-50'>
+    <header className='bg-[#23272F] fixed w-screen z-50'>
+      <nav className='flex justify-between items-center container mx-auto h-[72px]'>
         <div>
           <Link to={'/'}>
-            <img className='w-16' src={logo} alt='logo' />
+            <img className='w-16 cursor-pointer' src={logo} alt='logo' />
           </Link>
         </div>
         <div
